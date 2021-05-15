@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Workout_Tracker.Models
 {
-    class ExerciseListItem
+    public class ExerciseListItem
     {
+        public  int ExerciseId { get; set; }
+
+        public string Name { get; set; }
+
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

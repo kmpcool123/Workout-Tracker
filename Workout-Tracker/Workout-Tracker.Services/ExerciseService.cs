@@ -55,5 +55,7 @@ namespace Workout_Tracker.Services
                 return query.ToArray();
             }
         }
+
+
     }
 }
