@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Workout_Tracker.Data
 {
+
     public class Routine
     {
         [Key]
