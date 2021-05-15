@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workout_Tracker.Data
+namespace Workout_Tracker.Models.Exercise_Models
 {
-    public class ExerciseEquipment
+    class ExerciseDetail
     {
-
     }
 }
