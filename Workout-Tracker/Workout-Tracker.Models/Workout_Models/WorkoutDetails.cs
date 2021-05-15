@@ -1,35 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workout_Tracker.Data
+namespace Workout_Tracker.Models
 {
-      public class Workout
+      public class WorkoutDetails
       {
-            [Key]
+            [Display(Name = "Workout_ID")]
             public int WorkoutID { get; set; }
 
-            [Required]
+            [Display(Name = "Name of Workout")]
             public string NameOfWorkout { get; set; }
 
-            [Required]
-            public Guid UserID { get; set; }
-
-            [Required]
+            [Display(Name = "Descriptoin")]
             public string Description { get; set; }
 
-            [Required]
+            [Display(Name = "Created")]
             public DateTimeOffset CreatedUtc { get; set; }
 
+            [Display(Name = "Modified")]
             public DateTimeOffset ModifiedUtc { get; set; }
 
-            [ForeignKey(nameof(Routine))]
-            public int RoutineID { get; set; }
 
-            public virtual ICollection<Routine> Routine { get; set; }
       }
 }
