@@ -1,14 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Workout_Tracker.Data;
 
-namespace Workout_Tracker.Data
+namespace Workout_Tracker.Models.RoutineModel
 {
-
-    public class Routine
+    public class RoutineDetail
     {
-        [Key]
-        public int RoutineID { get; set; }
         public string RoutineName { get; set; }
         public string Description { get; set; }
         [ForeignKey(nameof(Workout))]
@@ -16,6 +17,5 @@ namespace Workout_Tracker.Data
         public virtual List<Workout> ListOfWorkouts { get; set; }
         [ForeignKey(nameof(Exercise))]
         public virtual List<Exercise> ListofExercises { get; set; }
-
     }
 }

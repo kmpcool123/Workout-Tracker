@@ -1,11 +1,11 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
 
 namespace Workout_Tracker.Data
 {
@@ -23,19 +23,20 @@ namespace Workout_Tracker.Data
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
-           
+
         }
 
         public DbSet<Workout> Workouts { get; set; }
+        public IEnumerable<object> Routine { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

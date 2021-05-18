@@ -91,10 +91,16 @@
     <Compile Include="Exercise_Models\ExerciseListItem.cs" />
 
     <Compile Include="Properties\AssemblyInfo.cs" />
+
+    <Compile Include="RoutineModel\RoutineCreate.cs" />
+    <Compile Include="RoutineModel\RoutineDetail.cs" />
+    <Compile Include="RoutineModel\RoutineEdit.cs" />
+
     <Compile Include="Workout_Models\WorkoutCreate.cs" />
     <Compile Include="Workout_Models\WorkoutDetails.cs" />
     <Compile Include="Workout_Models\WorkoutEdit.cs" />
     <Compile Include="Workout_Models\WorkoutListItem.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
