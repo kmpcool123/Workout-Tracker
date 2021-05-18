@@ -1,31 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workout_Tracker.Data
+namespace Workout_Tracker.Models
 {
-    public class Exercise
-    {
-        [Key]
-        public int ExerciseId { get; set; }
+    public class ExerciseCreate
+    {   
         [Required]
-        public Guid UserId { get; set; }
-        [Required]
+        [MinLength(1, ErrorMessage = "Please enter at least 1 character.")]
+
+        [MaxLength(300, ErrorMessage = "There are too many characters in this field. Max length 300 characters.")]
         public string ExerciseName { get; set; }
-        [Required]
         public string ExerciseDescription { get; set; }
-
         [Required]
-        [ForeignKey("Routine")]
         public int RoutineID { get; set; }
-        public virtual Routine Routine { get; set; }
-
-        [Required]
+        
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
+        [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
