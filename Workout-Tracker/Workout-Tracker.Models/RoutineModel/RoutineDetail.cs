@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,13 @@ namespace Workout_Tracker.Models.RoutineModel
 {
     public class RoutineDetail
     {
+        public int RoutineID { get; set; }
         public string RoutineName { get; set; }
-        public string Description { get; set; }
-        [ForeignKey(nameof(Workout))]
-        public int WorkoutID { get; set; }
-        public virtual Workout Workouts { get; set; }
-        [ForeignKey(nameof(Exercise))]
-        public virtual Exercise Exercises { get; set; }
+        public string RputineDescription { get; set; }
+        public string WorkoutName { get; set; }
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
