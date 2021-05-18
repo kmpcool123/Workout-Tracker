@@ -15,7 +15,5 @@ namespace Workout_Tracker.Models
             [Display(Name = "Name of Workout")]
             public string NameOfWorkout { get; set; }
 
-            [Display(Name = "Created")]
-            public DateTimeOffset CreatedUtc { get; set; }
       }
 }

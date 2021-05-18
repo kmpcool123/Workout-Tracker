@@ -11,13 +11,13 @@ namespace Workout_Tracker.Data
       public class Workout
       {
             [Key]
-            public int WorkoutID { get; set; }
-
-            [Required]
-            public string NameOfWorkout { get; set; }
+            public int WorkoutID { get; set; }           
 
             [Required]
             public Guid UserID { get; set; }
+
+            [Required]
+            public string NameOfWorkout { get; set; }
 
             [Required]
             public string Description { get; set; }
@@ -25,11 +25,11 @@ namespace Workout_Tracker.Data
             [Required]
             public DateTimeOffset CreatedUtc { get; set; }
 
-            public DateTimeOffset ModifiedUtc { get; set; }
+            public DateTimeOffset? ModifiedUtc { get; set; }
 
-            [ForeignKey(nameof(Routine))]
-            public int RoutineID { get; set; }
+         //   [ForeignKey(nameof(Routine))]
+         //   public int RoutineID { get; set; }
 
-            public virtual ICollection<Routine> Routine { get; set; }
+          //  public virtual ICollection<Routine> Routine { get; set; }
       }
 }
