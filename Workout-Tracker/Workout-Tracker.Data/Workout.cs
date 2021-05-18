@@ -17,7 +17,7 @@ namespace Workout_Tracker.Data
             public Guid UserID { get; set; }
 
             [Required]
-            public string NameOfWorkout { get; set; }
+            public string WorkoutName { get; set; }
 
             [Required]
             public string Description { get; set; }
@@ -27,9 +27,9 @@ namespace Workout_Tracker.Data
 
             public DateTimeOffset? ModifiedUtc { get; set; }
 
-         //   [ForeignKey(nameof(Routine))]
-         //   public int RoutineID { get; set; }
+            [ForeignKey(nameof(Routine))]
+            public int RoutineID { get; set; }
 
-          //  public virtual ICollection<Routine> Routine { get; set; }
+            public virtual ICollection<Routine> Routine { get; set; }
       }
 }
