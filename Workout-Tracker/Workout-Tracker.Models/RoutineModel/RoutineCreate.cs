@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Workout_Tracker.Models.RoutineModel
 {
-    class RoutineCreate
+    public class RoutineCreate
     {
         [Required]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters")]
