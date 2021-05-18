@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Workout_Tracker.Models.RoutineModel
 {
-    class RoutineEdit
+    public class RoutineEdit
     {
         [Key]
         public int RoutineID { get; set; }
