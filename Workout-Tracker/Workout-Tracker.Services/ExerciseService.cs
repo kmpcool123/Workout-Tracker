@@ -23,8 +23,8 @@ namespace Workout_Tracker.Services
                 new Exercise()
                 {
                     UserId = _userId,
-                    ExerciseName = model.Name,
-                    Description = model.Description,
+                    ExerciseName = model.ExerciseName,
+                    ExerciseDescription = model.ExerciseDescription,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -46,7 +46,7 @@ namespace Workout_Tracker.Services
                             e =>
                                 new ExerciseListItem
                                 {
-                                    ExerciseId = e.ExerciseId,                                         Name = e.ExerciseName,
+                                    ExerciseId = e.ExerciseId,                                         ExerciseName = e.ExerciseName,                       
                                     CreatedUtc = e.CreatedUtc,
 
                                 }
