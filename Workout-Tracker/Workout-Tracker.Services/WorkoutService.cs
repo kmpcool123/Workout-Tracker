@@ -49,7 +49,7 @@ namespace Workout_Tracker.Services
                               new WorkoutListItem
                               {
                                     WorkoutID = e.WorkoutID,
-                                    NameOfWorkout = e.WorkoutName,                                   
+                                    WorkoutName = e.WorkoutName,                                   
                               });
                         return query.ToArray();
                                     
