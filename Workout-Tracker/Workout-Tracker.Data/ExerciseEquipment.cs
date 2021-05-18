@@ -10,8 +10,6 @@ namespace Workout_Tracker.Data
 {
     public class ExerciseEquipment
     {
-
-
         [Key]
         public int EquipmentID { get; set; }
         public string Name { get; set; }
@@ -20,6 +18,5 @@ namespace Workout_Tracker.Data
         [ForeignKey(nameof(Exercise))]
         public int ExericeId { get; set; }
         public virtual Exercise Exercise { get; set; }
-
     }
 }
