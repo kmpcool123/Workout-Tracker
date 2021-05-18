@@ -13,7 +13,7 @@ namespace Workout_Tracker.Services
             var entity =
                 new Routine()
                 {
-                    NameofRoutine = model.NameofRoutine,
+                    RoutineName = model.RoutineName,
                     Description = model.Description
                 };
             using (var ctx = new ApplicationDbContext())
@@ -30,12 +30,12 @@ namespace Workout_Tracker.Services
                 var entity =
                     ctx
                     .Routine
-                    .Where(e =>.UserId == _userId)
+                    .Where(e => .UserId == _userId)
                     .Select(
                         e =>
                         new RoutineDetail
                         {
-                            NameOfRoutine = e.NameofRoutine,
+                            RoutineName = e.RoutineName,
                             Description = e.Description,
                             Workout = e.ListofWorkout,
                             Exercise = e.ListofExercise
@@ -51,9 +51,9 @@ namespace Workout_Tracker.Services
                 var entity =
                     ctx
                     .Routine
-                    .Single(e => e.RoutineId == model.RoutineID && e.UserId == _userId);
+                    .Single(e => e.RoutineID == model.RoutineID && e.UserId == _userId);
 
-                entity.NameOfRoutine = model.NameofRoutine;
+                entity.NameOfRoutine = model.RoutineName;
                 entity.Description = model.Description;
 
                 return ctx.SaveChanges() == 1;

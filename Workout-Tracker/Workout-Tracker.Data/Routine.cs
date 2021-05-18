@@ -9,7 +9,7 @@ namespace Workout_Tracker.Data
     {
         [Key]
         public int RoutineID { get; set; }
-        public string NameofRoutine { get; set; }
+        public string RoutineName { get; set; }
         public string Description { get; set; }
         [ForeignKey(nameof(Workout))]
         public int WorkoutID { get; set; }
