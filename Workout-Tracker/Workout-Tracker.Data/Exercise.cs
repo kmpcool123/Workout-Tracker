@@ -24,6 +24,8 @@ namespace Workout_Tracker.Data
         public int RoutineID { get; set; }
         public virtual Routine Routine { get; set; }
 
+        public virtual Workout Workout { get; set; }
+
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
