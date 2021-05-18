@@ -24,7 +24,7 @@ namespace Workout_Tracker.Services
                         new Workout
                         {
                               UserID = _userID,
-                              NameOfWorkout = model.NameOfWorkout,
+                              WorkoutName = model.WorkoutName,
                               Description = model.Description,
                               CreatedUtc = DateTimeOffset.UtcNow
                         };
@@ -49,7 +49,7 @@ namespace Workout_Tracker.Services
                               new WorkoutListItem
                               {
                                     WorkoutID = e.WorkoutID,
-                                    NameOfWorkout = e.NameOfWorkout,                                   
+                                    WorkoutName = e.WorkoutName,                                   
                               });
                         return query.ToArray();
                                     
@@ -69,7 +69,7 @@ namespace Workout_Tracker.Services
                               new WorkoutDetails
                               {
                                     WorkoutID = entity.WorkoutID,
-                                    NameOfWorkout = entity.NameOfWorkout,
+                                    WorkoutName = entity.WorkoutName,
                                     Description = entity.Description,
                                     CreatedUtc = entity.CreatedUtc,
                                     ModifiedUtc = entity.ModifiedUtc
@@ -86,7 +86,7 @@ namespace Workout_Tracker.Services
                               .Workouts
                               .Single(e => e.WorkoutID == model.WorkoutID);
 
-                        entity.NameOfWorkout = model.NameOfWorkout;
+                        entity.WorkoutName = model.WorkoutName;
                         entity.Description = model.Description;
                         entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
