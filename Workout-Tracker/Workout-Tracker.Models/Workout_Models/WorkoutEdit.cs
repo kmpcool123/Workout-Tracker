@@ -16,7 +16,7 @@ namespace Workout_Tracker.Models
             [Display(Name = "Workout_Name")]
             [MinLength(2, ErrorMessage = "Please enter at least 2 characters in this field")]
             [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
-            public string NameOfWorkout { get; set; }
+            public string WorkoutName { get; set; }
 
 
            

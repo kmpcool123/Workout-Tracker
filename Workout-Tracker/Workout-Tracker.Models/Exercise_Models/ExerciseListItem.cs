@@ -13,9 +13,9 @@ namespace Workout_Tracker.Models
 
         public string ExerciseName { get; set; }
 
-        public string RoutineID { get; set; }
+        public string RoutineName { get; set; }
 
-        public string WorkoutId { get; set; }
+        public string WorkoutName { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }
