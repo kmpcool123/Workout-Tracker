@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using Workout_Tracker.Models;
+using Workout_Tracker.Models.Exercise_Models;
 using Workout_Tracker.Services;
 
 namespace Workout_Tracker.Controllers
@@ -41,6 +38,44 @@ namespace Workout_Tracker.Controllers
 
             return Ok();
 
+        }
+
+        public IHttpActionResult Get(int id)
+        {
+            ExerciseService cardService = CreateExerciseService();
+            var exercise = cardService.GetExerciseById(id);
+            return Ok(exercise);
+        }
+
+        public IHttpActionResult Get(string exerciseName)
+        {
+            ExerciseService exerciseService = CreateExerciseService();
+            var exercise = exerciseService.GetExerciseByName(exerciseName);
+            return Ok(exercise);
+        }
+
+        public IHttpActionResult Put(ExerciseEdit exercise)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateExerciseService();
+
+            if (!service.UpdateExercise(exercise ))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+
+            var service = CreateExerciseService();
+
+            if (!service.DeleteExercise(id))
+                return InternalServerError();
+
+            return Ok();
         }
     }
 }
