@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Workout_Tracker.Data;
+using Workout_Tracker.Models;
 using Workout_Tracker.Models.RoutineModel;
 
 namespace Workout_Tracker.Services
@@ -13,39 +15,63 @@ namespace Workout_Tracker.Services
             var entity =
                 new Routine()
                 {
+                    UserId = _userId,
                     RoutineName = model.RoutineName,
-                    Description = model.RoutineDescription,
+                    RoutineDescription = model.RoutineDescription,
+                    WorkoutID = WorkoutID,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Routine.Add(entity);
+                ctx.Routines.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public RoutineDetail GetRoutine()
+        public IEnumerable<ExerciseListItem> GetAllRoutines()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Routines
+                    .Where(e => e.UserId == _userId)
+                    .Select(
+                        e =>
+                        new Routine
+                        {
+                            RoutineName = e.RoutineName,
+                            RoutineDescription = e.RoutineDescription,
+                            WorkoutID = e.WorkoutID,
+                            ExerciseId = e.ExerciseId,
+                            CreatedUtc = e.CreatedUtc,
+                            ModifiedUtc = e.ModifiedUtc
+                        });
+            }
+        }
+
+        public RoutineDetail GetRoutineById(int routineId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                    .Routine
-                    .Where(e => .UserId == _userId)
-                    .Select(
-                        e =>
+                    .Routines
+                    .Single(e => .UserId == _userId);
+                return
                         new RoutineDetail
                         {
                             RoutineName = e.RoutineName,
-                            Description = e.RoutineDescription,
-                            Workout = e.Workout,
-                            Exercise = e.Exercise,
+                            RoutineDescription = e.RoutineDescription,
+                            WorkoutID = e.WorkoutID,
+                            ExerciseId = e.ExerciseId,
                             CreatedUtc = e.CreatedUtc,
                             ModifiedUtc = e.ModifiedUtc
                         });
-                return entity.ToArray();
             }
         }
+
+
 
         public bool UpdateRoutine(RoutineEdit model)
         {
@@ -53,11 +79,11 @@ namespace Workout_Tracker.Services
             {
                 var entity =
                     ctx
-                    .Routine
-                    .Single(e => e.RoutineID == model.RoutineID && e.UserId == _userId);
+                    .Routines
+                    .Single(e => e.RoutineId == model.RoutineID && e.UserId == _userId);
 
-                entity.NameOfRoutine = model.RoutineName;
-                entity.Description = model.RoutineDescription;
+                entity.RoutineName = model.RoutineName;
+                entity.RoutineDescription = model.RoutineDescription;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -69,10 +95,10 @@ namespace Workout_Tracker.Services
             {
                 var entity =
                     ctx
-                    .Routine
+                    .Routines
                     .Single(e => e.RoutineId == routineID && e.UserId == _userId);
 
-                ctx.Routine.Remove(entity);
+                ctx.Routines.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
