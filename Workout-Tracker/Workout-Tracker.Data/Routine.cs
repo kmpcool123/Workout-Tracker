@@ -13,9 +13,10 @@ namespace Workout_Tracker.Data
         public string Description { get; set; }
         [ForeignKey(nameof(Workout))]
         public int WorkoutID { get; set; }
-        public virtual Workout Workouts { get; set; }
-        [ForeignKey(nameof(Exercise))]
-        public virtual Exercise Exercises { get; set; }
+
+        public virtual Workout Workout { get; set; }
+        
+
 
     }
 }
