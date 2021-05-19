@@ -20,7 +20,7 @@ namespace Workout_Tracker.Data
             public string WorkoutName { get; set; }
 
             [Required]
-            public string Description { get; set; }
+            public string Workout_Description { get; set; }
 
             [Required]
             public DateTimeOffset CreatedUtc { get; set; }

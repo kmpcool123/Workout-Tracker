@@ -13,13 +13,17 @@ namespace Workout_Tracker.Data
     {
         [Key]
         public int RoutineID { get; set; }
-        public string NameofRoutine { get; set; }
-        public string Description { get; set; }
+
+        public string RoutineName { get; set; }
+
+        public string RoutineDescription { get; set; }
+
         [ForeignKey(nameof(Workout))]
         public int WorkoutID { get; set; }
-        public virtual List<Workout> ListOfWorkouts { get; set; }
-        [ForeignKey(nameof(Exercise))]
-        public virtual List<Exercise> ListofExercises { get; set; }
+
+        public virtual List<Workout> Workout { get; set; }
+        
+       
 
     }
 }
