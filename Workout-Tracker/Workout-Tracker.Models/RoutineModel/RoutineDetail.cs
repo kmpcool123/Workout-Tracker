@@ -13,7 +13,7 @@ namespace Workout_Tracker.Models.RoutineModel
     {
         public int RoutineID { get; set; }
         public string RoutineName { get; set; }
-        public string RputineDescription { get; set; }
+        public string RoutineDescription { get; set; }
         public string WorkoutName { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

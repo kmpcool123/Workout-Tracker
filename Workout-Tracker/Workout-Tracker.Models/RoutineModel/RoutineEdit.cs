@@ -7,6 +7,6 @@ namespace Workout_Tracker.Models.RoutineModel
         [Key]
         public int RoutineID { get; set; }
         public string RoutineName { get; set; }
-        public string Description { get; set; }
+        public string RoutineDescription { get; set; }
     }
 }
