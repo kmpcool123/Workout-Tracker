@@ -56,7 +56,7 @@ namespace Workout_Tracker.Services
                     .Routine
                     .Single(e => e.RoutineID == model.RoutineID && e.UserId == _userId);
 
-                entity.NameOfRoutine = model.RoutineName;
+                entity.RoutineName = model.RoutineName;
                 entity.Description = model.RoutineDescription;
 
                 return ctx.SaveChanges() == 1;
