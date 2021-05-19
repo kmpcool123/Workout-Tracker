@@ -14,7 +14,7 @@ namespace Workout_Tracker.Services
                 new Routine()
                 {
                     RoutineName = model.RoutineName,
-                    Description = model.RoutineDescription,
+                    RoutineDescription = model.RoutineDescription,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -37,7 +37,7 @@ namespace Workout_Tracker.Services
                         new RoutineDetail
                         {
                             RoutineName = e.RoutineName,
-                            Description = e.RoutineDescription,
+                            RoutineDescription = e.RoutineDescription,
                             Workout = e.Workout,
                             Exercise = e.Exercise,
                             CreatedUtc = e.CreatedUtc,
@@ -57,7 +57,7 @@ namespace Workout_Tracker.Services
                     .Single(e => e.RoutineID == model.RoutineID && e.UserId == _userId);
 
                 entity.RoutineName = model.RoutineName;
-                entity.Description = model.RoutineDescription;
+                entity.RoutineDescription = model.RoutineDescription;
 
                 return ctx.SaveChanges() == 1;
             }
