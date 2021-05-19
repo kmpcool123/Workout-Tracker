@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Workout_Tracker.Models.RoutineModel
 {
-    class RoutineEdit
+    public class RoutineEdit
     {
         [Key]
         public int RoutineID { get; set; }
-        public string NameofRoutine { get; set; }
-        public string Description { get; set; }
+        public string RoutineName { get; set; }
+        public string RoutineDescription { get; set; }
     }
 }

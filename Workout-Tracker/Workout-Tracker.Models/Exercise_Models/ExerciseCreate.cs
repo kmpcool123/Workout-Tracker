@@ -10,7 +10,18 @@ namespace Workout_Tracker.Models
     public class ExerciseCreate
     {   
         [Required]
-        public string Name { get; set; }
-        public string Description { get; set; }
+        [MinLength(1, ErrorMessage = "Please enter at least 1 character.")]
+
+        [MaxLength(300, ErrorMessage = "There are too many characters in this field. Max length 300 characters.")]
+        public string ExerciseName { get; set; }
+        public string ExerciseDescription { get; set; }
+        [Required]
+        public int RoutineID { get; set; }
+        
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
     }
 }
