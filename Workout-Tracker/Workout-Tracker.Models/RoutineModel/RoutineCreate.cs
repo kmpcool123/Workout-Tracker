@@ -9,6 +9,6 @@ namespace Workout_Tracker.Models.RoutineModel
         [MaxLength(25, ErrorMessage = "There are too many characters in this field.")]
         public string RoutineName { get; set; }
         [MaxLength(2000)]
-        public string Description { get; set; }
+        public string RoutineDescription { get; set; }
     }
 }
