@@ -9,6 +9,9 @@ namespace Workout_Tracker.Data
     public class Routine
     {
         [Key]
+
+        
+       
         public int RoutineId { get; set; }
         [Required]
         public Guid UserId { get; set; }
@@ -22,6 +25,7 @@ namespace Workout_Tracker.Data
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
+
 
     }
 }

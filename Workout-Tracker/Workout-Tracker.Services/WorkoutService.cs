@@ -25,7 +25,7 @@ namespace Workout_Tracker.Services
                         {
                               UserID = _userID,
                               WorkoutName = model.WorkoutName,
-                              Description = model.Description,
+                              Workout_Description = model.Workout_Description,
                               CreatedUtc = DateTimeOffset.UtcNow
                         };
 
@@ -70,7 +70,7 @@ namespace Workout_Tracker.Services
                               {
                                     WorkoutID = entity.WorkoutID,
                                     WorkoutName = entity.WorkoutName,
-                                    Description = entity.Description,
+                                    Description = entity.Workout_Description,
                                     CreatedUtc = entity.CreatedUtc,
                                     ModifiedUtc = entity.ModifiedUtc
                               };
@@ -87,7 +87,7 @@ namespace Workout_Tracker.Services
                               .Single(e => e.WorkoutID == model.WorkoutID);
 
                         entity.WorkoutName = model.WorkoutName;
-                        entity.Description = model.Description;
+                        entity.Workout_Description = model.Workout_Description;
                         entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                         return ctx.SaveChanges() == 1;
