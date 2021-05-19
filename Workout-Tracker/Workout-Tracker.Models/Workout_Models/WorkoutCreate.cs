@@ -17,9 +17,9 @@ namespace Workout_Tracker.Models
 
 
             [Required]
-            [Display(Name = "Description")]
+            [Display(Name = "Workout_Description")]
             [MaxLength(1000)]
-            public string Description { get; set; }
+            public string Workout_Description { get; set; }
 
       }
 }

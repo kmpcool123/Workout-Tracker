@@ -9,14 +9,14 @@ namespace Workout_Tracker.Models
 {
       public class WorkoutDetails
       {
-            [Display(Name = "Workout_ID")]
+            
             public int WorkoutID { get; set; }
 
             [Display(Name = "Workout_Name")]
             public string WorkoutName { get; set; }
 
-            [Display(Name = "Descriptoin")]
-            public string Description { get; set; }
+            [Display(Name = "Workout_Descriptoin")]
+            public string Workout_Description { get; set; }
 
             [Display(Name = "Created")]
             public DateTimeOffset CreatedUtc { get; set; }
