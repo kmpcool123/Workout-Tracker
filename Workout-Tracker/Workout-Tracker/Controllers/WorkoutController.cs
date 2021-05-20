@@ -8,6 +8,7 @@ using System.Web.Http;
 using Workout_Tracker.Models;
 using Workout_Tracker.Services;
 
+
 namespace Workout_Tracker.Controllers
 {
       [Authorize]
@@ -54,6 +55,17 @@ namespace Workout_Tracker.Controllers
                   WorkoutService wService = CreateWorkoutService();
 
                   var content = wService.GetWorkoutbyID(workoutID);
+
+                  return Ok(content);
+            }
+
+
+            public IHttpActionResult GetByName(string workoutName)
+            {
+
+                  WorkoutService wService = CreateWorkoutService();
+
+                  var content = wService.GetWorkoutByName(workoutName);
 
                   return Ok(content);
             }

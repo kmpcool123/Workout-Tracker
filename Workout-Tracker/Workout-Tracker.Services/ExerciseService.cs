@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Workout_Tracker.Data;
 using Workout_Tracker.Models;
-using Workout_Tracker.Models.Exercise_Models;
 
 namespace Workout_Tracker.Services
 {
-    public class ExerciseService
+    /*public class ExerciseService
     {
         private readonly Guid _userId;
 
@@ -49,7 +48,7 @@ namespace Workout_Tracker.Services
                                 new ExerciseListItem
                                 {
                                     ExerciseId = e.ExerciseId,                                        ExerciseName = e.ExerciseName,                                    RoutineName = e.Routine.RoutineName,
-                                    WorkoutName = e.Routine.Workout.NameOfWorkout,
+                                    WorkoutName = e.Routine.Workout.WorkoutName,
                                     CreatedUtc = e.CreatedUtc,
 
                                 }
@@ -138,5 +137,5 @@ namespace Workout_Tracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-    }
+    }*/
 }

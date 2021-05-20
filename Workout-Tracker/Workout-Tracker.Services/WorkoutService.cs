@@ -77,6 +77,27 @@ namespace Workout_Tracker.Services
                   }
             }
 
+            public WorkoutDetails GetWorkoutByName(string workoutName)
+            {
+                  using (var ctx = new ApplicationDbContext())
+                  {
+                        var entity =
+                              ctx.Workouts
+
+                              .Single(e => e.WorkoutName == workoutName);
+
+                        return
+                              new WorkoutDetails
+                              {
+                                    WorkoutID = entity.WorkoutID,
+                                    WorkoutName = entity.WorkoutName,
+                                    Workout_Description = entity.Workout_Description,
+                                    CreatedUtc = entity.CreatedUtc,
+                                    ModifiedUtc = entity.ModifiedUtc
+                              };
+                  }
+            }
+
             public bool UpdateListItem(WorkoutEdit model)
             {
                   using(var ctx = new ApplicationDbContext())

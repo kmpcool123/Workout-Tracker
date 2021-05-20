@@ -2,7 +2,7 @@
 
 namespace Workout_Tracker.Models.RoutineModel
 {
-    public class RoutineCreate
+  /*  public class RoutineCreate
     {
         public int RoutineId { get; set; }
         [Required]
@@ -13,5 +13,5 @@ namespace Workout_Tracker.Models.RoutineModel
         public string RoutineDescription { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-    }
+    }*/
 }

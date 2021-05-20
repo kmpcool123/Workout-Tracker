@@ -7,7 +7,7 @@ using Workout_Tracker.Data;
 
 namespace Workout_Tracker.Services
 {
-    public  class EquipmentService
+  /*  public  class EquipmentService
     {
         private readonly Guid _userID;
         public EquipmentService (Guid userID)
@@ -53,5 +53,5 @@ namespace Workout_Tracker.Services
                 return query.ToArray();
             }
         }
-    }
+    }*/
 }

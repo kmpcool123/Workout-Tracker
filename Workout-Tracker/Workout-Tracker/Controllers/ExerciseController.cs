@@ -7,8 +7,8 @@ using Workout_Tracker.Services;
 
 namespace Workout_Tracker.Controllers
 {
-    [Authorize]
-    public class ExerciseController : ApiController
+    
+  /*  public class ExerciseController : ApiController
     {
         private ExerciseService CreateExerciseService()
         {
@@ -77,5 +77,5 @@ namespace Workout_Tracker.Controllers
 
             return Ok();
         }
-    }
+    }*/
 }

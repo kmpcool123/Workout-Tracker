@@ -7,7 +7,7 @@ using Workout_Tracker.Models.RoutineModel;
 
 namespace Workout_Tracker.Services
 {
-    public class RoutineService
+  /*  public class RoutineService
     {
         private readonly Guid _userId;
         public bool CreateRoutine(RoutineCreate model)
@@ -102,5 +102,5 @@ namespace Workout_Tracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-    }
+    }*/
 }

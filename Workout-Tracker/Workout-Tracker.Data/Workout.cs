@@ -31,6 +31,6 @@ namespace Workout_Tracker.Data
             [ForeignKey(nameof(Routine))]
             public int RoutineID { get; set; }
 
-            public virtual ICollection<Routine> Routine { get; set; }
+            public virtual Routine Routine { get; set; }
       }
 }
