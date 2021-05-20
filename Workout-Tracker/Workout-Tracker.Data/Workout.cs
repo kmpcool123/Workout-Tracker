@@ -28,9 +28,5 @@ namespace Workout_Tracker.Data
 
             public DateTimeOffset? ModifiedUtc { get; set; }
 
-            [ForeignKey(nameof(Routine))]
-            public int RoutineID { get; set; }
-
-            public virtual ICollection<Routine> Routine { get; set; }
       }
 }

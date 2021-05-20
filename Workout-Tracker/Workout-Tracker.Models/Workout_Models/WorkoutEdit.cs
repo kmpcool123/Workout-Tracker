@@ -9,7 +9,7 @@ namespace Workout_Tracker.Models
 {
       public class WorkoutEdit
       {
-            [Display(Name ="Workout_ID")]
+            
             public int WorkoutID { get; set; }
 
             
@@ -22,6 +22,6 @@ namespace Workout_Tracker.Models
            
             [Display(Name = "Workout_Description")]
             [MaxLength(1000)]
-            public string Description { get; set; }
+            public string Workout_Description { get; set; }
       }
 }

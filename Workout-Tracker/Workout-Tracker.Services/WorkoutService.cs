@@ -87,7 +87,11 @@ namespace Workout_Tracker.Services
                               .Single(e => e.WorkoutID == model.WorkoutID);
 
                         entity.WorkoutName = model.WorkoutName;
-                        entity.Workout_Description = model.Description;
+
+                        entity.Workout_Description = model.Workout_Description;
+
+                        entity.Workout_Description = model.Workout_Description;
+
                         entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                         return ctx.SaveChanges() == 1;

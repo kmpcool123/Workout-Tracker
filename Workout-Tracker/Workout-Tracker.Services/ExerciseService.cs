@@ -43,13 +43,15 @@ namespace Workout_Tracker.Services
                 var query =
                     ctx
                         .Exercises
-                        .Where(e => e.UserId == _userId)
+                        
                         .Select(
                             e =>
                                 new ExerciseListItem
                                 {
-                                    ExerciseId = e.ExerciseId,                                        ExerciseName = e.ExerciseName,                                    RoutineName = e.Routine.RoutineName,
-                                    WorkoutName = e.Routine.Workout.NameOfWorkout,
+                                    ExerciseId = e.ExerciseId,
+                                    ExerciseName = e.ExerciseName, 
+                                    RoutineName = e.Routine.RoutineName,
+                                    WorkoutName = e.Routine.Workout.WorkoutName,
                                     CreatedUtc = e.CreatedUtc,
 
                                 }

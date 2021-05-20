@@ -15,7 +15,8 @@ namespace Workout_Tracker.Models
             [Display(Name = "Workout_Name")]
             public string WorkoutName { get; set; }
 
-            [Display(Name = "Workout_Descriptoin")]
+            [Display(Name = "Workout_Description")]
+
             public string Workout_Description { get; set; }
 
             [Display(Name = "Created")]
