@@ -62,12 +62,12 @@ namespace Workout_Tracker.Services
                 return
                         new RoutineDetail
                         {
-                            RoutineName = e.RoutineName,
-                            RoutineDescription = e.RoutineDescription,
-                            WorkoutID = e.WorkoutID,
-                            ExerciseId = e.ExerciseId,
-                            CreatedUtc = e.CreatedUtc,
-                            ModifiedUtc = e.ModifiedUtc
+                            RoutineName = entity.RoutineName,
+                            RoutineDescription = entity.RoutineDescription,
+                            WorkoutName = entity.Workout.WorkoutName,
+                            ExerciseName = entity.Exercise.ExerciseName,
+                            CreatedUtc = entity.CreatedUtc,
+                            ModifiedUtc = entity.ModifiedUtc
                         });
             }
         }

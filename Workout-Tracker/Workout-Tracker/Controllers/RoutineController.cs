@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Workout_Tracker.Controllers
 {
+    [Authorize]
     public class RoutineController : ApiController
     {
         private RoutineService CreateRoutineService()
