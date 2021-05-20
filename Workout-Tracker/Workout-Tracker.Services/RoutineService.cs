@@ -28,7 +28,7 @@ namespace Workout_Tracker.Services
             }
         }
 
-        public IEnumerable<ExerciseListItem> GetAllRoutines()
+        public IEnumerable<Routine> GetAllRoutines()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -47,6 +47,7 @@ namespace Workout_Tracker.Services
                             CreatedUtc = e.CreatedUtc,
                             ModifiedUtc = e.ModifiedUtc
                         });
+                return query.ToArray();
             }
         }
 
@@ -89,7 +90,7 @@ namespace Workout_Tracker.Services
             }
         }
 
-        public bool RoutineDelete(int routineID)
+        public bool DeleteRoutine(int routineID)
         {
             using (var ctx = new ApplicationDbContext())
             {
