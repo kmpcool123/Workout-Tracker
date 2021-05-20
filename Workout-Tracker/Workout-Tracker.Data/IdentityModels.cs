@@ -37,13 +37,6 @@ namespace Workout_Tracker.Data
 
         public DbSet<Workout> Workouts { get; set; }
 
-        public DbSet<Routine> Routines { get; set; }
-
-
-        public DbSet<Exercise>  Exercises { get; set; }
-
-      
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

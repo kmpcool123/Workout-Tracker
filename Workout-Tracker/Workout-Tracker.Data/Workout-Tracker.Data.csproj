@@ -87,6 +87,10 @@
     <Compile Include="Exercise.cs" />
     <Compile Include="ExerciseEquipment.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202105202349208_Update Workout.DataTable.cs" />
+    <Compile Include="Migrations\202105202349208_Update Workout.DataTable.Designer.cs">
+      <DependentUpon>202105202349208_Update Workout.DataTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routine.cs" />
@@ -95,6 +99,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105202349208_Update Workout.DataTable.resx">
+      <DependentUpon>202105202349208_Update Workout.DataTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

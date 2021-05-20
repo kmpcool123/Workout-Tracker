@@ -14,14 +14,5 @@ namespace Workout_Tracker.Data
     {
 
 
-        [Key]
-        public int EquipmentID { get; set; }
-        public string Name { get; set; }
-        public DateTime TimeLenght { get; set; }
-
-        [ForeignKey(nameof(Exercise))]
-        public int ExericeId { get; set; }
-        public virtual Exercise Exercise { get; set; }
-
     }
 }
