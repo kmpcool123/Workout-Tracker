@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Workout_Tracker.Data
 {
-    public class ExerciseEquipment
+    public class Equipment
     {
         [Key]
         public int EquipmentID { get; set; }

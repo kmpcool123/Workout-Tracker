@@ -84,11 +84,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EquipmentModels\EquipmentCreate.cs" />
+    <Compile Include="EquipmentModels\EquipmentDetail.cs" />
+    <Compile Include="EquipmentModels\EquipmentEdit.cs" />
+    <Compile Include="EquipmentModels\EquipmentList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
