@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Workout_Tracker.Models.RoutineModel
 {
@@ -11,6 +12,8 @@ namespace Workout_Tracker.Models.RoutineModel
         public string RoutineName { get; set; }
         [MaxLength(2000)]
         public string RoutineDescription { get; set; }
+        public int WorkoutID { get; set; }
+        public int ExerciseID { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }
