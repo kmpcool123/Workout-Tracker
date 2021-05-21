@@ -9,10 +9,10 @@ namespace Workout_Tracker.Models
 {
       public class WorkoutListItem
       {
-            [Display(Name = "Workout_ID")]
+           
             public int WorkoutID { get; set; }
 
-            [Display(Name = "Workout Name")]
+            [Display(Name = "Workout_Name")]
             public string WorkoutName { get; set; }
 
       }

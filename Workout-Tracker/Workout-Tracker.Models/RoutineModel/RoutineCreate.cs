@@ -1,8 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Workout_Tracker.Models.RoutineModel
+namespace Workout_Tracker.Models
 {
+
     public class RoutineCreate
     {
         public int RoutineId { get; set; }
@@ -17,4 +18,6 @@ namespace Workout_Tracker.Models.RoutineModel
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }
+
+      
 }

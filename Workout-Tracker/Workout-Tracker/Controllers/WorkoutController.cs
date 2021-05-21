@@ -58,6 +58,18 @@ namespace Workout_Tracker.Controllers
                   return Ok(content);
             }
 
+
+            public IHttpActionResult GetByName(string workoutName)
+            {
+
+                  WorkoutService wService = CreateWorkoutService();
+
+                  var content = wService.GetWorkoutByName(workoutName);
+
+                  return Ok(content);
+            }
+
+
             public IHttpActionResult Put(WorkoutEdit workout)
             {
                   if (!ModelState.IsValid)

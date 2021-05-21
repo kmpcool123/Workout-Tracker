@@ -21,16 +21,12 @@ namespace Workout_Tracker.Data
             public string WorkoutName { get; set; }
 
             [Required]
-            public string Description { get; set; }
+            public string Workout_Description { get; set; }
 
             [Required]
             public DateTimeOffset CreatedUtc { get; set; }
 
             public DateTimeOffset? ModifiedUtc { get; set; }
 
-            [ForeignKey(nameof(Routine))]
-            public int RoutineID { get; set; }
-
-            public virtual ICollection<Routine> Routine { get; set; }
       }
 }

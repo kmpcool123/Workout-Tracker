@@ -1,8 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Workout_Tracker.Models.RoutineModel
+namespace Workout_Tracker.Models
 {
+
     public class RoutineDetail
     {
         public int RoutineID { get; set; }
@@ -15,4 +16,5 @@ namespace Workout_Tracker.Models.RoutineModel
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
+
 }
