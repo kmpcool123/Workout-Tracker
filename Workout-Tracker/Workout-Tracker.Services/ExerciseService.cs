@@ -48,6 +48,7 @@ namespace Workout_Tracker.Services
                             e =>
                                 new ExerciseListItem
                                 {
+
                                     ExerciseId = e.ExerciseId,
                                     ExerciseName = e.ExerciseName, 
                                     RoutineName = e.Routine.RoutineName,

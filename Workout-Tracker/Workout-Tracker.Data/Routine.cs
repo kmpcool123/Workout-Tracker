@@ -54,6 +54,9 @@ namespace Workout_Tracker.Data
         public int WorkoutID { get; set; }
 
         public virtual Workout Workout { get; set; }
+        [ForeignKey(nameof(Exercise))]
+        public int ExerciseID { get; set; }
+        public virtual Exercise Exercise { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
