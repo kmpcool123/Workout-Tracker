@@ -29,9 +29,9 @@ namespace Workout_Tracker.Services
                               CreatedUtc = DateTimeOffset.UtcNow
                         };
 
-                  using(var ctx = new ApplicationDbContext())
+                  using (var ctx = new ApplicationDbContext())
                   {
-                       ctx.Workouts.Add(entity);
+                        ctx.Workouts.Add(entity);
 
                         return ctx.SaveChanges() == 1;
                   }
@@ -39,31 +39,52 @@ namespace Workout_Tracker.Services
 
             public IEnumerable<WorkoutListItem> GetAllWorkout()
             {
-                  using(var ctx = new ApplicationDbContext())
+                  using (var ctx = new ApplicationDbContext())
                   {
                         var query =
                               ctx
                               .Workouts
-                              
-                              .Select(e => 
+
+                              .Select(e =>
                               new WorkoutListItem
                               {
                                     WorkoutID = e.WorkoutID,
-                                    WorkoutName = e.WorkoutName,                                   
+                                    WorkoutName = e.WorkoutName,
                               });
                         return query.ToArray();
-                                    
+
                   }
             }
 
             public WorkoutDetails GetWorkoutbyID(int workoutID)
             {
-                  using(var ctx = new ApplicationDbContext())
+                  using (var ctx = new ApplicationDbContext())
                   {
                         var entity =
                               ctx.Workouts
-                              
+
                               .Single(e => e.WorkoutID == workoutID);
+
+                        return
+                              new WorkoutDetails
+                              {
+                                    WorkoutID = entity.WorkoutID,
+                                    WorkoutName = entity.WorkoutName,
+                                    Workout_Description = entity.Workout_Description,
+                                    CreatedUtc = entity.CreatedUtc,
+                                    ModifiedUtc = entity.ModifiedUtc
+                              };
+                  }
+            }
+
+            public WorkoutDetails GetWorkoutByName(string workoutName)
+            {
+                  using (var ctx = new ApplicationDbContext())
+                  {
+                        var entity =
+                              ctx.Workouts
+
+                              .Single(e => e.WorkoutName == workoutName);
 
                         return
                               new WorkoutDetails
@@ -79,7 +100,7 @@ namespace Workout_Tracker.Services
 
             public bool UpdateListItem(WorkoutEdit model)
             {
-                  using(var ctx = new ApplicationDbContext())
+                  using (var ctx = new ApplicationDbContext())
                   {
                         var entity =
                               ctx
@@ -87,11 +108,7 @@ namespace Workout_Tracker.Services
                               .Single(e => e.WorkoutID == model.WorkoutID);
 
                         entity.WorkoutName = model.WorkoutName;
-
                         entity.Workout_Description = model.Workout_Description;
-
-                        entity.Workout_Description = model.Workout_Description;
-
                         entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                         return ctx.SaveChanges() == 1;
@@ -100,20 +117,20 @@ namespace Workout_Tracker.Services
 
             public bool DeleteWorkout(int workoutID)
             {
-                  using(var ctx = new ApplicationDbContext())
+                  using (var ctx = new ApplicationDbContext())
                   {
                         var entity =
                               ctx
                               .Workouts
-                              
+
                               .Single(e => e.WorkoutID == workoutID);
                         ctx.Workouts.Remove(entity);
 
                         return ctx.SaveChanges() == 1;
-                        
+
                   }
             }
 
-           
+
       }
 }

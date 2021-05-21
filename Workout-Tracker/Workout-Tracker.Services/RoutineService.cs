@@ -16,6 +16,7 @@ namespace Workout_Tracker.Services
                   _userId = userID;
             }
 
+<<<<<<< HEAD
             public bool CreateRoutine(RoutineCreate model)
             {
                   var entity =
@@ -32,6 +33,28 @@ namespace Workout_Tracker.Services
                         ctx.Routines.Add(entity);
                         return ctx.SaveChanges() == 1;
                   }
+=======
+        public IEnumerable<Routine> GetAllRoutines()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Routines
+                    .Where(e => e.UserId == _userId)
+                    .Select(
+                        e =>
+                        new Routine
+                        {
+                            RoutineName = e.RoutineName,
+                            RoutineDescription = e.RoutineDescription,
+                            WorkoutID = e.WorkoutID,
+                            ExerciseId = e.ExerciseId,
+                            CreatedUtc = e.CreatedUtc,
+                            ModifiedUtc = e.ModifiedUtc
+                        });
+                return query.ToArray();
+>>>>>>> b763e21d790c1d42d13ee48cdec2a935a25cbb5e
             }
 
 
@@ -95,8 +118,14 @@ namespace Workout_Tracker.Services
                   }
             }
 
+<<<<<<< HEAD
 
             public bool RoutineDelete(int routineID)
+=======
+        public bool DeleteRoutine(int routineID)
+        {
+            using (var ctx = new ApplicationDbContext())
+>>>>>>> b763e21d790c1d42d13ee48cdec2a935a25cbb5e
             {
                   using (var ctx = new ApplicationDbContext())
                   {
