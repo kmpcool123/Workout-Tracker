@@ -22,7 +22,7 @@ namespace Workout_Tracker.Controllers
 
         public IHttpActionResult Get()
         {
-            CreateRoutineService routineService = CreateRoutineService();
+            RoutineService routineService = CreateRoutineService();
             var routine = routineService.GetAllRoutines();
             return Ok(routine);
         }
@@ -60,7 +60,7 @@ namespace Workout_Tracker.Controllers
         public IHttpActionResult Delete(int id)
         {
             var service = CreateRoutineService();
-            if (!service = DeleteRoutine(id))
+            if (!service.DeleteRoutine(id))
                 return InternalServerError();
             return Ok();
         }
