@@ -10,6 +10,10 @@ namespace Workout_Tracker.Services
     public class RoutineService
     {
         private readonly Guid _userId;
+        public RoutineService(Guid userId)
+        {
+            _userId = userId;
+        }
         public bool CreateRoutine(RoutineCreate model)
         {
             var entity =

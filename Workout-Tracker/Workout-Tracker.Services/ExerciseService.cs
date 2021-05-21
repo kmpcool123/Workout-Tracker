@@ -49,7 +49,7 @@ namespace Workout_Tracker.Services
                                 new ExerciseListItem
                                 {
                                     ExerciseId = e.ExerciseId,                                        ExerciseName = e.ExerciseName,                                    RoutineName = e.Routine.RoutineName,
-                                    WorkoutName = e.Routine.Workout.NameOfWorkout,
+                                    WorkoutName = e.Routine.Workout.WorkoutName,
                                     CreatedUtc = e.CreatedUtc,
 
                                 }
