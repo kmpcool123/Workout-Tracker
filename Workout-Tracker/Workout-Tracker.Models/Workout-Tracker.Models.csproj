@@ -92,6 +92,7 @@
     <Compile Include="RoutineModel\RoutineCreate.cs" />
     <Compile Include="RoutineModel\RoutineDetail.cs" />
     <Compile Include="RoutineModel\RoutineEdit.cs" />
+    <Compile Include="RoutineModel\RoutineListItem.cs" />
     <Compile Include="Workout_Models\WorkoutCreate.cs" />
     <Compile Include="Workout_Models\WorkoutDetails.cs" />
     <Compile Include="Workout_Models\WorkoutEdit.cs" />

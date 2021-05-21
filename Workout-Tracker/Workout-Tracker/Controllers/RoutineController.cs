@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
+using Workout_Tracker.Models.RoutineModel;
+using Workout_Tracker.Services;
 
 namespace Workout_Tracker.Controllers
 {
@@ -11,7 +15,7 @@ namespace Workout_Tracker.Controllers
     {
         private RoutineService CreateRoutineService()
         {
-            var userId = Guid.Parse(User.Identit.GetUserId());
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var routineService = new RoutineService(userId);
             return routineService;
         }
