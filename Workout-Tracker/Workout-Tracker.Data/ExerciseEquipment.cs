@@ -10,13 +10,19 @@ using System.Threading.Tasks;
 namespace Workout_Tracker.Data
 
 {
-    public class ExerciseEquipment
+    public class Equipment
     {
 
 
         [Key]
         public int EquipmentID { get; set; }
+
+        [Required]
+        public Guid UserID { get; set; }
+
+        [Required]
         public string Name { get; set; }
+        [Required]
         public DateTime TimeLenght { get; set; }
 
         [ForeignKey(nameof(Exercise))]
