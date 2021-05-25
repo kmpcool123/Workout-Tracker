@@ -24,7 +24,7 @@ namespace Workout_Tracker.Services
                     RoutineName = model.RoutineName,
                     RoutineDescription = model.RoutineDescription,
                     WorkoutID = model.WorkoutID,
-                    ExerciseID =model.ExerciseID,
+                    ExerciseId =model.ExerciseID,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -54,7 +54,7 @@ namespace Workout_Tracker.Services
                             RoutineName = e.RoutineName,
                             RoutineDescription = e.RoutineDescription,
                             WorkoutID = e.Workout.WorkoutID,
-                            ExerciseID = e.Exercise.ExerciseId,
+                            ExerciseId = e.Exercise.ExerciseId,
                             CreatedUtc = e.CreatedUtc,
                             ModifiedUtc = e.ModifiedUtc
                         });
