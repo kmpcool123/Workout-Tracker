@@ -22,10 +22,11 @@ namespace Workout_Tracker.Services
         public bool CreateEquipment (EquipmentCreate model)
         {
             var entity =
-                new Equipment()
+                new ExerciseEquipment()
                 {
                     UserID = _userId,
-                    Name = model.Name,
+                    ExerciseEquipmentName = model.ExerciseEquipmentName,
+                    ExerciseEquipmentDescription =model.ExerciseEquipmentDescription,
                     TimeLenght = model.TimeLenght
                 };
 
@@ -56,7 +57,8 @@ namespace Workout_Tracker.Services
                               new EquipmentList
                               {
                                   EquipmentId = e.EquipmentID,
-                                  Name = e.Name,
+                                  ExerciseEquipmentName = e.ExerciseEquipmentName,
+                                  ExerciseEquipmentDescription =e.ExerciseEquipmentDescription,
                                   TimeLenght = e.TimeLenght
 
                               }
@@ -79,7 +81,8 @@ namespace Workout_Tracker.Services
                     new EquipmentDetail
                     {
                         EquipmentId = entity.EquipmentID,
-                        Name = entity.Name,
+                        ExerciseEquipmentName = entity.ExerciseEquipmentName,
+                        ExerciseEquipmentDescription =entity.ExerciseEquipmentDescription,
                         TimeLenght = entity.TimeLenght
                     };
             }
@@ -95,7 +98,8 @@ namespace Workout_Tracker.Services
                     .Equipments
                     .Single(e => e.EquipmentID == model.EquipmentId && e.UserID == _userId);
 
-                entity.Name = model.Name;
+                entity.ExerciseEquipmentName = model.ExerciseEquipmentDescription;
+                entity.ExerciseEquipmentDescription = model.ExerciseEquipmentDescription;
                 entity.TimeLenght = model.TimeLenght;
 
                 return ctx.SaveChanges() == 1;
