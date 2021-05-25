@@ -10,7 +10,8 @@ namespace Workout_Tracker.Models.EquipmentModels
     public class EquipmentDetail
     {
         public int EquipmentId { get; set; }
-        public string Name { get; set; }
+        public string ExerciseEquipmentName { get; set; }
+        public string ExerciseEquipmentDescription { get; set; }
         public DateTime TimeLenght { get; set; }
 
       

@@ -13,7 +13,10 @@ namespace Workout_Tracker.Models.EquipmentModels
         public int EquipmentId { get; set; }
 
         [Display(Name = "Equipment Name")]
-        public string Name { get; set; }
+        public string ExerciseEquipmentName { get; set; }
+
+        [Display(Name = "Equipment Description")]
+        public string ExerciseEquipmentDescription { get; set; }
 
         [Display(Name = "Time Duration")]
         public DateTime TimeLenght { get; set; }
