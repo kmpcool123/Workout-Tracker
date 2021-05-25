@@ -24,20 +24,19 @@ namespace Workout_Tracker.Services
                     RoutineName = model.RoutineName,
                     RoutineDescription = model.RoutineDescription,
                     WorkoutID = model.WorkoutID,
-                    ExerciseId =model.ExerciseID,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                        ctx.Routines.Add(entity);
-                        return ctx.SaveChanges() == 1;
+                ctx.Routines.Add(entity);
+                return ctx.SaveChanges() == 1;
             }
         }
-            
-            
 
-            
-             
+
+
+
+
 
         public IEnumerable<Routine> GetAllRoutines()
         {
@@ -49,12 +48,12 @@ namespace Workout_Tracker.Services
                     .Where(e => e.UserId == _userId)
                     .Select(
                         e =>
-                        new Routine
+                        new RoutineListItem
                         {
+                            RoutineId = e.RoutineId,
                             RoutineName = e.RoutineName,
                             RoutineDescription = e.RoutineDescription,
-                            WorkoutID = e.Workout.WorkoutID,
-                            ExerciseId = e.Exercise.ExerciseId,
+                            WorkoutName = e.Workout.WorkoutName,
                             CreatedUtc = e.CreatedUtc,
                             ModifiedUtc = e.ModifiedUtc
                         });
@@ -62,84 +61,60 @@ namespace Workout_Tracker.Services
 
             }
 
-
-            public IEnumerable<RoutineListItem> GetAllRoutines()
+        }
+        public RoutineDetail GetRoutineById(int routineID)
+        {
+            using (var ctx = new ApplicationDbContext())
             {
-
                 var entity =
                     ctx
                     .Routines
-                    .Single(e => e.UserId == _userId);
+                    .Single(e => e.RoutineId == routineID);
                 return
                         new RoutineDetail
                         {
+                            RoutineID = entity.RoutineId,
                             RoutineName = entity.RoutineName,
                             RoutineDescription = entity.RoutineDescription,
                             WorkoutName = entity.Workout.WorkoutName,
-                            ExerciseName = entity.Exercise.ExerciseName,
                             CreatedUtc = entity.CreatedUtc,
                             ModifiedUtc = entity.ModifiedUtc
-                        });
-                return query.ToArray();
-              
+                        };
             }
+        }
 
 
-            public RoutineDetail GetRoutineById(int routineID)
+        public bool UpdateRoutine(RoutineEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
             {
-                  using (var ctx = new ApplicationDbContext())
-                  {
-                        var entity =
-                            ctx
-                            .Routines
-                            .Single(e => e.RoutineId == routineID);
-                        return
-                                new RoutineDetail
-                                {
-                                      RoutineID = entity.RoutineId,
-                                      RoutineName = entity.RoutineName,
-                                      RoutineDescription = entity.RoutineDescription,
-                                      WorkoutName = entity.Workout.WorkoutName,
-                                      ExerciseName = entity.Exercise.ExerciseName,
-                                      CreatedUtc = entity.CreatedUtc,
-                                      ModifiedUtc = entity.ModifiedUtc
-                                };
-                  }
+                var entity =
+                    ctx
+                    .Routines
+                    .Single(e => e.RoutineId == model.RoutineID && e.UserId == _userId);
+
+                entity.RoutineName = model.RoutineName;
+                entity.RoutineDescription = model.RoutineDescription;
+
+                return ctx.SaveChanges() == 1;
             }
-
-
-            public bool UpdateRoutine(RoutineEdit model)
-            {
-                  using (var ctx = new ApplicationDbContext())
-                  {
-                        var entity =
-                            ctx
-                            .Routines
-                            .Single(e => e.RoutineId == model.RoutineID && e.UserId == _userId);
-
-                        entity.RoutineName = model.RoutineName;
-                        entity.RoutineDescription = model.RoutineDescription;
-
-                        return ctx.SaveChanges() == 1;
-                  }
-            }
+        }
 
 
         public bool DeleteRoutine(int routineID)
         {
+
             using (var ctx = new ApplicationDbContext())
-
             {
-                  using (var ctx = new ApplicationDbContext())
-                  {
-                        var entity =
-                            ctx
-                            .Routines
-                            .Single(e => e.RoutineId == routineID && e.UserId == _userId);
+                var entity =
+                    ctx
+                    .Routines
+                    .Single(e => e.RoutineId == routineID && e.UserId == _userId);
 
-                        ctx.Routines.Remove(entity);
-                        return ctx.SaveChanges() == 1;
-                  }
+                ctx.Routines.Remove(entity);
+                return ctx.SaveChanges() == 1;
             }
-      }
+
+        }
+    }
 }
