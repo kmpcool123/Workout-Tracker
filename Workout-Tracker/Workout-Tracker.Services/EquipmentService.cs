@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Workout_Tracker.Data;
+
 using Workout_Tracker.Models.EquipmentModels;
 
 namespace Workout_Tracker.Services
@@ -34,10 +35,14 @@ namespace Workout_Tracker.Services
                 return ctx.SaveChanges() == 1;
             }
 
+
         }
 
 
         //see all the equipment
+
+        }
+
         public IEnumerable<EquipmentList> GetEquipment()
         {
             using (var ctx = new ApplicationDbContext())
@@ -113,5 +118,4 @@ namespace Workout_Tracker.Services
             }
         }
     }
-
 }
