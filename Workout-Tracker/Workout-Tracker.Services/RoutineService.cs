@@ -33,7 +33,7 @@ namespace Workout_Tracker.Services
             }
         }
 
-        public IEnumerable<Routine> GetAllRoutines()
+        public IEnumerable<RoutineListItem> GetAllRoutines()
         {
             using (var ctx = new ApplicationDbContext())
             {
