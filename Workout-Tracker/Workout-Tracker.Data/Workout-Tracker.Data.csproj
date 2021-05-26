@@ -87,6 +87,14 @@
     <Compile Include="Exercise.cs" />
     <Compile Include="ExerciseEquipment.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202105260045217_Add-Migration EquipMentMigration.cs" />
+    <Compile Include="Migrations\202105260045217_Add-Migration EquipMentMigration.Designer.cs">
+      <DependentUpon>202105260045217_Add-Migration EquipMentMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105260116212_ExerciseEdit.cs" />
+    <Compile Include="Migrations\202105260116212_ExerciseEdit.Designer.cs">
+      <DependentUpon>202105260116212_ExerciseEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routine.cs" />
@@ -101,6 +109,14 @@
       <Project>{652cda78-e8f9-463e-a990-a0174df326d8}</Project>
       <Name>Workout-Tracker.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105260045217_Add-Migration EquipMentMigration.resx">
+      <DependentUpon>202105260045217_Add-Migration EquipMentMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105260116212_ExerciseEdit.resx">
+      <DependentUpon>202105260116212_ExerciseEdit.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

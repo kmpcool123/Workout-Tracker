@@ -18,6 +18,7 @@ namespace Workout_Tracker.Services
             _userId = userId;
         }
 
+        //Create a Exercise
         public bool CreateExercise(ExerciseCreate model)
         {
             var entity =
@@ -36,6 +37,7 @@ namespace Workout_Tracker.Services
             }
         }
 
+        //Get all Exercises
         public IEnumerable<ExerciseListItem> GetExercises()
         {
             using (var ctx = new ApplicationDbContext())
@@ -43,7 +45,7 @@ namespace Workout_Tracker.Services
                 var query =
                     ctx
                         .Exercises
-                        
+                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new ExerciseListItem

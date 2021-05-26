@@ -38,7 +38,7 @@ namespace Workout_Tracker.Services
 
 
 
-        public IEnumerable<Routine> GetAllRoutines()
+        public IEnumerable<RoutineListItem> GetAllRoutines()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -48,15 +48,16 @@ namespace Workout_Tracker.Services
                     .Where(e => e.UserId == _userId)
                     .Select(
                         e =>
-                        new RoutineListItem
-                        {
-                            RoutineId = e.RoutineId,
-                            RoutineName = e.RoutineName,
-                            RoutineDescription = e.RoutineDescription,
-                            WorkoutName = e.Workout.WorkoutName,
-                            CreatedUtc = e.CreatedUtc,
-                            ModifiedUtc = e.ModifiedUtc
-                        });
+                            new RoutineListItem
+                            {
+                                RoutineId = e.RoutineId,
+                                RoutineName = e.RoutineName,
+                                RoutineDescription = e.RoutineDescription,
+                                WorkoutName = e.Workout.WorkoutName,
+                                CreatedUtc = e.CreatedUtc,
+                                ModifiedUtc = e.ModifiedUtc
+                            }
+                            );
                 return query.ToArray();
 
             }

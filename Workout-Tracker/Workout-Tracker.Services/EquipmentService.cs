@@ -42,9 +42,9 @@ namespace Workout_Tracker.Services
 
         //see all the equipment
 
-        }
+        
 
-        public IEnumerable<EquipmentList> GetEquipment()
+        public IEnumerable<EquipmentList> GetEquipments()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -107,7 +107,7 @@ namespace Workout_Tracker.Services
         }
 
         //to Delete an equipment by id
-        public bool DeleteEquipment (int equipmentId)
+        public bool DeleteExerciseEquipment (int equipmentId)
         {
             using (var ctx = new ApplicationDbContext())
             {
