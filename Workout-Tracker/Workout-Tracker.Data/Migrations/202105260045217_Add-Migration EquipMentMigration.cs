@@ -16,11 +16,11 @@ namespace Workout_Tracker.Data.Migrations
                         ExerciseEquipmentName = c.String(nullable: false),
                         ExerciseEquipmentDescription = c.String(nullable: false),
                         TimeLenght = c.DateTime(nullable: false),
-                        ExericeId = c.Int(nullable: false),
+                        ExercieId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.EquipmentID)
-                .ForeignKey("dbo.Exercise", t => t.ExericeId, cascadeDelete: true)
-                .Index(t => t.ExericeId);
+                .ForeignKey("dbo.Exercise", t => t.ExercieId, cascadeDelete: true)
+                .Index(t => t.ExercieId);
             
             CreateTable(
                 "dbo.Exercise",
