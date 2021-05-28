@@ -65,7 +65,7 @@ namespace Workout_Tracker.Services
                 var entity =
                     ctx
                     .Routines
-                    .Single(e => e.RoutineId == routineID);
+                    .Single(e => e.RoutineId == routineID && e.UserId == _userId);
                 return
                         new RoutineDetail
                         {

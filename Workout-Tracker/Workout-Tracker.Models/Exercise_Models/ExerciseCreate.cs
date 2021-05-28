@@ -15,8 +15,6 @@ namespace Workout_Tracker.Models
         [MaxLength(300, ErrorMessage = "There are too many characters in this field. Max length 300 characters.")]
         public string ExerciseName { get; set; }
         public string ExerciseDescription { get; set; }
-        [Required]
-        public int RoutineID { get; set; }
         
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

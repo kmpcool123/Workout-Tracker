@@ -16,6 +16,9 @@ namespace Workout_Tracker.Data
 
         [Key]
         public int EquipmentID { get; set; }
+        [Required]
+        public Guid UserId { get; set; }
+        [Required]
         public string Name { get; set; }
         public DateTime TimeLenght { get; set; }
 
