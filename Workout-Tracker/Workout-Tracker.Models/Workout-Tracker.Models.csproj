@@ -84,6 +84,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EquipmentModels\EquipmentCreate.cs" />
+    <Compile Include="EquipmentModels\EquipmentDetail.cs" />
+    <Compile Include="EquipmentModels\EquipmentEdit.cs" />
+    <Compile Include="EquipmentModels\EquipmentList.cs" />
     <Compile Include="Exercise_Models\ExerciseCreate.cs" />
     <Compile Include="Exercise_Models\ExerciseDetail.cs" />
     <Compile Include="Exercise_Models\ExerciseEdit.cs" />
@@ -102,5 +106,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

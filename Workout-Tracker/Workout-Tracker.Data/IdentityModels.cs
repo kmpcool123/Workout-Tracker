@@ -36,6 +36,7 @@ namespace Workout_Tracker.Data
         }
 
         public DbSet<Workout> Workouts { get; set; }
+        public DbSet<ExerciseEquipment> Equipments { get; set; }
 
         public DbSet<Routine> Routines { get; set; }
 
