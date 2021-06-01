@@ -33,11 +33,6 @@ namespace Workout_Tracker.Services
             }
         }
 
-
-
-
-
-
         public IEnumerable<RoutineListItem> GetAllRoutines()
         {
             using (var ctx = new ApplicationDbContext())
@@ -63,6 +58,7 @@ namespace Workout_Tracker.Services
             }
 
         }
+
         public RoutineDetail GetRoutineById(int routineID)
         {
             using (var ctx = new ApplicationDbContext())
@@ -70,7 +66,7 @@ namespace Workout_Tracker.Services
                 var entity =
                     ctx
                     .Routines
-                    .Single(e => e.RoutineId == routineID);
+                    .Single(e => e.RoutineId == routineID && e.UserId == _userId);
                 return
                         new RoutineDetail
                         {
