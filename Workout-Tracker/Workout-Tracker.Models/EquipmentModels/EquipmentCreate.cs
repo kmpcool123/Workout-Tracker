@@ -21,8 +21,10 @@ namespace Workout_Tracker.Models.EquipmentModels
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public string ExerciseEquipmentDescription { get; set; }
 
-        [Required]
-        [Display(Name = "Time Duration")]
-        public DateTime TimeLenght { get; set; }
+
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

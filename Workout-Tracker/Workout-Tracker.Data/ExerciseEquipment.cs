@@ -27,7 +27,8 @@ namespace Workout_Tracker.Data
         public string ExerciseEquipmentDescription { get; set; }
 
         [Required]
-        public DateTime TimeLenght { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
         [ForeignKey(nameof(Exercise))]
         public int ExerciseId { get; set; }
