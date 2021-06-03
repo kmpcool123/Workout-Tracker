@@ -42,9 +42,7 @@ namespace Workout_Tracker.Data
 
 
         public DbSet<Exercise>  Exercises { get; set; }
-
-      
-
+        public DbSet<Routine_Exercise> Routine_Exercises { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

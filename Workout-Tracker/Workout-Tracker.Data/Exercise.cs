@@ -21,9 +21,7 @@ namespace Workout_Tracker.Data
         [Required]
         public string ExerciseDescription { get; set; }
 
-        [Required]
-        [ForeignKey("Routine")]
-        public int RoutineID { get; set; }
+        
         public virtual Routine Routine { get; set; }
 
         public virtual Workout Workout { get; set; }

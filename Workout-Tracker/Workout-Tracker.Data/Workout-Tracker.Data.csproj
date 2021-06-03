@@ -95,9 +95,14 @@
     <Compile Include="Migrations\202105260116212_ExerciseEdit.Designer.cs">
       <DependentUpon>202105260116212_ExerciseEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105272316259_ExerciseNotTiedToRoutine.cs" />
+    <Compile Include="Migrations\202105272316259_ExerciseNotTiedToRoutine.Designer.cs">
+      <DependentUpon>202105272316259_ExerciseNotTiedToRoutine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routine.cs" />
+    <Compile Include="Routine_Exercise.cs" />
     <Compile Include="Workout.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105260116212_ExerciseEdit.resx">
       <DependentUpon>202105260116212_ExerciseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105272316259_ExerciseNotTiedToRoutine.resx">
+      <DependentUpon>202105272316259_ExerciseNotTiedToRoutine.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

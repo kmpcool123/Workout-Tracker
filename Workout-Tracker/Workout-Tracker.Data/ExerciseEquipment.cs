@@ -29,8 +29,6 @@ namespace Workout_Tracker.Data
         [Required]
         public DateTime TimeLenght { get; set; }
 
-        [ForeignKey(nameof(Exercise))]
-        public int ExericeId { get; set; }
         public virtual Exercise Exercise { get; set; }
 
     }

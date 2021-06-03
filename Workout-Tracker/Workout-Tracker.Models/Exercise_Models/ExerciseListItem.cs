@@ -11,6 +11,8 @@ namespace Workout_Tracker.Models
     {
         public  int ExerciseId { get; set; }
 
+        public int RoutineId { get; set; }
+
         public string ExerciseName { get; set; }
 
         public string RoutineName { get; set; }

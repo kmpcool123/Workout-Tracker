@@ -28,7 +28,7 @@ namespace Workout_Tracker.Services
                     ExerciseName = model.ExerciseName,
                     ExerciseDescription = model.ExerciseDescription,
                     CreatedUtc = DateTimeOffset.UtcNow,
-                    RoutineID = model.RoutineID,
+                    
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -121,8 +121,7 @@ namespace Workout_Tracker.Services
                         .Single(e => e.ExerciseId == model.ExerciseId && e.UserId == _userId);
 
                 entity.ExerciseName = model.ExerciseName;
-                entity.ExerciseDescription = model.ExerciseDescription;
-                entity.RoutineID = model.RoutineId;
+                entity.ExerciseDescription = model.ExerciseDescription;                
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
