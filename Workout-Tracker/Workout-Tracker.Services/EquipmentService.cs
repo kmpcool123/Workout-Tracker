@@ -27,7 +27,7 @@ namespace Workout_Tracker.Services
                     UserID = _userId,
                     ExerciseEquipmentName = model.ExerciseEquipmentName,
                     ExerciseEquipmentDescription =model.ExerciseEquipmentDescription,
-                    TimeLenght = model.TimeLenght
+                    CreatedUtc= DateTimeOffset.UtcNow,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -59,7 +59,9 @@ namespace Workout_Tracker.Services
                                   EquipmentId = e.EquipmentID,
                                   ExerciseEquipmentName = e.ExerciseEquipmentName,
                                   ExerciseEquipmentDescription =e.ExerciseEquipmentDescription,
-                                  TimeLenght = e.TimeLenght
+                                  ExerciseName =e.Exercise.ExerciseName,
+                                  CreatedUtc = e.CreatedUtc,
+                                  
 
                               }
                         );
@@ -82,8 +84,10 @@ namespace Workout_Tracker.Services
                     {
                         EquipmentId = entity.EquipmentID,
                         ExerciseEquipmentName = entity.ExerciseEquipmentName,
-                        ExerciseEquipmentDescription =entity.ExerciseEquipmentDescription,
-                        TimeLenght = entity.TimeLenght
+                        ExerciseEquipmentDescription = entity.ExerciseEquipmentDescription,
+                        ExerciseName = entity.Exercise.ExerciseName,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
                     };
             }
         }
@@ -100,7 +104,7 @@ namespace Workout_Tracker.Services
 
                 entity.ExerciseEquipmentName = model.ExerciseEquipmentDescription;
                 entity.ExerciseEquipmentDescription = model.ExerciseEquipmentDescription;
-                entity.TimeLenght = model.TimeLenght;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
             }

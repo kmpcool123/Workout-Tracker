@@ -12,8 +12,13 @@ namespace Workout_Tracker.Models.EquipmentModels
         public int EquipmentId { get; set; }
         public string ExerciseEquipmentName { get; set; }
         public string ExerciseEquipmentDescription { get; set; }
-        public DateTime TimeLenght { get; set; }
+        public string ExerciseName { get; set; }
 
-      
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
+
     }
 }
