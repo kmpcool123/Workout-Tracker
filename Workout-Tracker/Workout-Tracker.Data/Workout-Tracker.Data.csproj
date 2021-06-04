@@ -90,7 +90,6 @@
     <Compile Include="Migrations\202105272203569_InitialMigration.cs" />
     <Compile Include="Migrations\202105272203569_InitialMigration.Designer.cs">
       <DependentUpon>202105272203569_InitialMigration.cs</DependentUpon>
-		</Compile>
     <Compile Include="Migrations\202105260045217_Add-Migration EquipMentMigration.cs" />
     <Compile Include="Migrations\202105260045217_Add-Migration EquipMentMigration.Designer.cs">
       <DependentUpon>202105260045217_Add-Migration EquipMentMigration.cs</DependentUpon>
@@ -121,7 +120,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105272203569_InitialMigration.resx">
       <DependentUpon>202105272203569_InitialMigration.cs</DependentUpon>
-		</EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105260045217_Add-Migration EquipMentMigration.resx">
       <DependentUpon>202105260045217_Add-Migration EquipMentMigration.cs</DependentUpon>
     </EmbeddedResource>
