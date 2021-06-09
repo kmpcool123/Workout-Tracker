@@ -90,17 +90,10 @@
     <Compile Include="Migrations\202105272203569_InitialMigration.cs" />
     <Compile Include="Migrations\202105272203569_InitialMigration.Designer.cs">
       <DependentUpon>202105272203569_InitialMigration.cs</DependentUpon>
-    <Compile Include="Migrations\202105260045217_Add-Migration EquipMentMigration.cs" />
-    <Compile Include="Migrations\202105260045217_Add-Migration EquipMentMigration.Designer.cs">
-      <DependentUpon>202105260045217_Add-Migration EquipMentMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105260116212_ExerciseEdit.cs" />
-    <Compile Include="Migrations\202105260116212_ExerciseEdit.Designer.cs">
-      <DependentUpon>202105260116212_ExerciseEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105272255107_ExEquipThirdMigration.cs" />
-    <Compile Include="Migrations\202105272255107_ExEquipThirdMigration.Designer.cs">
-      <DependentUpon>202105272255107_ExEquipThirdMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202106040139113_MigrationOne.cs" />
+    <Compile Include="Migrations\202106040139113_MigrationOne.Designer.cs">
+      <DependentUpon>202106040139113_MigrationOne.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,14 +113,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105272203569_InitialMigration.resx">
       <DependentUpon>202105272203569_InitialMigration.cs</DependentUpon>
-    <EmbeddedResource Include="Migrations\202105260045217_Add-Migration EquipMentMigration.resx">
-      <DependentUpon>202105260045217_Add-Migration EquipMentMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105260116212_ExerciseEdit.resx">
-      <DependentUpon>202105260116212_ExerciseEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105272255107_ExEquipThirdMigration.resx">
-      <DependentUpon>202105272255107_ExEquipThirdMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106040139113_MigrationOne.resx">
+      <DependentUpon>202106040139113_MigrationOne.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

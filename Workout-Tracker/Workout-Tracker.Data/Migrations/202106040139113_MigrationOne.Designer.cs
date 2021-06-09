@@ -7,13 +7,13 @@ namespace Workout_Tracker.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class ExEquipThirdMigration : IMigrationMetadata
+    public sealed partial class MigrationOne : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ExEquipThirdMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrationOne));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105272255107_ExEquipThirdMigration"; }
+            get { return "202106040139113_MigrationOne"; }
         }
         
         string IMigrationMetadata.Source
