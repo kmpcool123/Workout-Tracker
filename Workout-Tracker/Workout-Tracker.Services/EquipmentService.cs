@@ -25,14 +25,18 @@ namespace Workout_Tracker.Services
                 new ExerciseEquipment()
                 {
                     UserID = _userId,
+
                     ExerciseEquipmentName = model.ExerciseEquipmentName,
+
                     ExerciseEquipmentDescription =model.ExerciseEquipmentDescription,
+
                     CreatedUtc= DateTimeOffset.UtcNow,
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Equipments.Add(entity);
+
                 return ctx.SaveChanges() == 1;
             }
 
@@ -57,9 +61,7 @@ namespace Workout_Tracker.Services
                               new EquipmentList
                               {
                                   EquipmentId = e.EquipmentID,
-                                  ExerciseEquipmentName = e.ExerciseEquipmentName,
-                                  ExerciseEquipmentDescription =e.ExerciseEquipmentDescription,
-                                  ExerciseName =e.Exercise.ExerciseName,
+                                  ExerciseEquipmentName = e.ExerciseEquipmentName,                                
                                   CreatedUtc = e.CreatedUtc,
                                   
 
@@ -85,7 +87,7 @@ namespace Workout_Tracker.Services
                         EquipmentId = entity.EquipmentID,
                         ExerciseEquipmentName = entity.ExerciseEquipmentName,
                         ExerciseEquipmentDescription = entity.ExerciseEquipmentDescription,
-                        ExerciseName = entity.Exercise.ExerciseName,
+                        
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
