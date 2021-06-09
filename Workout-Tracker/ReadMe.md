@@ -3,7 +3,7 @@
 We are looking to create an application that can help you to track your workouts. This application will allow you to enter the amounts of reps you are currently doing for a specific exercise and follow your progress as you continue to work to your goals. This is targeted to anyone that wants to start or improve their workout routines.
 <br><br><br>
 <h3>Database Diagram</h3><br>
-![DatabaseLayout](https://user-images.githubusercontent.com/78277685/121279359-6fbf5780-c8a2-11eb-9362-77d379db2724.png)
+Please feel free to check out our[DatabaseLayout](https://user-images.githubusercontent.com/78277685/121279359-6fbf5780-c8a2-11eb-9362-77d379db2724.png).
 <br><br>
 <h3>Trello Board</h3><br>
 Please feel free to check out our [Trello Board](https://trello.com/b/Q6gLIV0X/workout-tracker).
