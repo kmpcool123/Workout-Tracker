@@ -13,20 +13,19 @@ Please feel free to check out our <a href="https://docs.google.com/document/d/1i
 <br><br>
 <h3>Current Features</h3>
 <br>Currently our application had the ability to:
+<br>*Set up an user account
 <br>*Create workouts
 <br>*Have a workout that contains multiple routines
 <br>*Routines that may have multiple exercises
 <br>*Track different exercises within each routine
-<br>*Track the amount of reps done on an certain piece of equipment
-<br>*Track the amount of weight lifted on a specific equipment
-<br>*Track how many sets are done for a single exercise
-<br>*Set up a customized user account
+<br>*Track different exercises equipment per exercise
 <br><br>
 <h3>Stretch Goals</h3>
 <br>*Track activity across 3rd party APIs
 <br>*Explore challenges created by other users
 <br>*Add more activities such as running, walking, swimming, etc...
 <br>*Track the amount of calories burned
+<br>*Track stats of each exercise
 <br><br>
 <h3>Contributors</h3><br>
 <br>*<a href="https://github.com/kmpcool123">@kmpcool123</a>
