@@ -15,9 +15,6 @@ namespace Workout_Tracker.Models.EquipmentModels
         [Display(Name = "Equipment Name")]
         public string ExerciseEquipmentName { get; set; }
 
-        [Display(Name = "Equipment Description")]
-        public string ExerciseEquipmentDescription { get; set; }
-
         [Display(Name = "Exercise Name")]
         public string ExerciseName { get; set; }
 

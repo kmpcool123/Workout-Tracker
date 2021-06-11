@@ -87,6 +87,10 @@
     <Compile Include="Exercise.cs" />
     <Compile Include="ExerciseEquipment.cs" />
     <Compile Include="IdentityModels.cs" />
+
+    <Compile Include="Migrations\202106102332399_ExEquip.cs" />
+    <Compile Include="Migrations\202106102332399_ExEquip.Designer.cs">
+      <DependentUpon>202106102332399_ExEquip.cs</DependentUpon>
     <Compile Include="Migrations\202105272203569_InitialMigration.cs" />
     <Compile Include="Migrations\202105272203569_InitialMigration.Designer.cs">
       <DependentUpon>202105272203569_InitialMigration.cs</DependentUpon>
@@ -102,6 +106,7 @@
     <Compile Include="Migrations\202105272255107_ExEquipThirdMigration.cs" />
     <Compile Include="Migrations\202105272255107_ExEquipThirdMigration.Designer.cs">
       <DependentUpon>202105272255107_ExEquipThirdMigration.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +124,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="Migrations\202106102332399_ExEquip.resx">
+      <DependentUpon>202106102332399_ExEquip.cs</DependentUpon>
     <EmbeddedResource Include="Migrations\202105272203569_InitialMigration.resx">
       <DependentUpon>202105272203569_InitialMigration.cs</DependentUpon>
 		</EmbeddedResource>
@@ -130,6 +138,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105272255107_ExEquipThirdMigration.resx">
       <DependentUpon>202105272255107_ExEquipThirdMigration.cs</DependentUpon>
+
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

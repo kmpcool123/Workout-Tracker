@@ -3,7 +3,7 @@ namespace Workout_Tracker.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddMigrationEquipMentMigration : DbMigration
+    public partial class ExEquip : DbMigration
     {
         public override void Up()
         {
@@ -15,12 +15,13 @@ namespace Workout_Tracker.Data.Migrations
                         UserID = c.Guid(nullable: false),
                         ExerciseEquipmentName = c.String(nullable: false),
                         ExerciseEquipmentDescription = c.String(nullable: false),
-                        TimeLenght = c.DateTime(nullable: false),
-                        ExercieId = c.Int(nullable: false),
+                        ExerciseId = c.Int(nullable: false),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.EquipmentID)
-                .ForeignKey("dbo.Exercise", t => t.ExercieId, cascadeDelete: true)
-                .Index(t => t.ExercieId);
+                .ForeignKey("dbo.Exercise", t => t.ExerciseId, cascadeDelete: true)
+                .Index(t => t.ExerciseId);
             
             CreateTable(
                 "dbo.Exercise",
@@ -148,7 +149,7 @@ namespace Workout_Tracker.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.ExerciseEquipment", "ExericeId", "dbo.Exercise");
+            DropForeignKey("dbo.ExerciseEquipment", "ExerciseId", "dbo.Exercise");
             DropForeignKey("dbo.Exercise", "Workout_WorkoutID", "dbo.Workout");
             DropForeignKey("dbo.Exercise", "RoutineID", "dbo.Routine");
             DropForeignKey("dbo.Routine", "WorkoutID", "dbo.Workout");
@@ -159,7 +160,7 @@ namespace Workout_Tracker.Data.Migrations
             DropIndex("dbo.Routine", new[] { "WorkoutID" });
             DropIndex("dbo.Exercise", new[] { "Workout_WorkoutID" });
             DropIndex("dbo.Exercise", new[] { "RoutineID" });
-            DropIndex("dbo.ExerciseEquipment", new[] { "ExericeId" });
+            DropIndex("dbo.ExerciseEquipment", new[] { "ExerciseId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
