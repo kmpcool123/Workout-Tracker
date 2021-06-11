@@ -1,9 +1,9 @@
 <h1>Workout Tracker</h1>
 <h2>Our Mission</h2><br>
-We are looking to create an application that can help you to track your workouts. This application will allow you to enter the amounts of reps you are currently doing for a specific exercise and follow your progress as you continue to work to your goals. This is targeted to anyone that wants to start or improve their workout routines.
+We are looking to create an application that can help you to track your workouts. This application will allow you to track your workouts, routines, exercises, and the equipment you own. This is targeted to anyone that wants to start or improve their workout schedule and structure.
 <br><br><br>
 <h3>Database Diagram</h3><br>
-Please feel free to check out our <a href="https://user-images.githubusercontent.com/78277685/121279359-6fbf5780-c8a2-11eb-9362-77d379db2724.png">DatabaseLayout</a>.
+Please feel free to check out our <a href="https://user-images.githubusercontent.com/78277685/121614327-7083f500-ca2c-11eb-8260-3466c5344649.png">DatabaseLayout</a>.
 <br><br>
 <h3>Trello Board</h3><br>
 Please feel free to check out our <a href="https://trello.com/b/Q6gLIV0X/workout-tracker">Trello Board</a>.
