@@ -26,6 +26,7 @@ namespace Workout_Tracker.Data
         [Required]
         public string ExerciseEquipmentDescription { get; set; }
 
+         
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }

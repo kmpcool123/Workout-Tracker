@@ -101,6 +101,8 @@
     <Compile Include="Workout_Models\WorkoutDetails.cs" />
     <Compile Include="Workout_Models\WorkoutEdit.cs" />
     <Compile Include="Workout_Models\WorkoutListItem.cs" />
+    <Compile Include="WSummary\WSCreate.cs" />
+    <Compile Include="WSummary\WSDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

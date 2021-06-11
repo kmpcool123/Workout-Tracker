@@ -22,11 +22,12 @@ namespace Workout_Tracker.Data
 
             [Required]
             public string Workout_Description { get; set; }
-
+       
             [Required]
             public DateTimeOffset CreatedUtc { get; set; }
 
             public DateTimeOffset? ModifiedUtc { get; set; }
+        
 
       }
 }

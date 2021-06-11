@@ -23,6 +23,7 @@ namespace Workout_Tracker.Data
 
             public virtual Workout Workout { get; set; }
 
+
             [Required]
             public DateTimeOffset CreatedUtc { get; set; }
 

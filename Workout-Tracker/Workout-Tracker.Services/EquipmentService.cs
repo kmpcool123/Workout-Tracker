@@ -27,6 +27,7 @@ namespace Workout_Tracker.Services
                     UserID = _userId,
                     ExerciseEquipmentName = model.ExerciseEquipmentName,
                     ExerciseEquipmentDescription =model.ExerciseEquipmentDescription,
+                    ExerciseId = model.ExerciseID,
                     CreatedUtc= DateTimeOffset.UtcNow,
                 };
 
@@ -61,8 +62,7 @@ namespace Workout_Tracker.Services
                                   ExerciseEquipmentDescription =e.ExerciseEquipmentDescription,
                                   ExerciseName =e.Exercise.ExerciseName,
                                   CreatedUtc = e.CreatedUtc,
-                                  
-
+                                 
                               }
                         );
                 return query.ToArray();
