@@ -26,13 +26,13 @@ namespace Workout_Tracker.Data
         [Required]
         public string ExerciseEquipmentDescription { get; set; }
 
+        [ForeignKey(nameof(Exercise))]
+        public int ExerciseId { get; set; }
+        public virtual Exercise Exercise { get; set; }
+
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
-
-       // [ForeignKey(nameof(Exercise))]
-       // public int ExerciseId { get; set; }
-      //  public virtual Exercise Exercise { get; set; }
 
     }
 }

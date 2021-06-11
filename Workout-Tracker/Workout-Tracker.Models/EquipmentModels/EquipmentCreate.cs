@@ -9,6 +9,8 @@ namespace Workout_Tracker.Models.EquipmentModels
 {
     public class EquipmentCreate
     {
+        public int EquipmentID { get; set; }
+
         [Required]
         [Display(Name = "Equipment Name")]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
@@ -20,6 +22,8 @@ namespace Workout_Tracker.Models.EquipmentModels
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public string ExerciseEquipmentDescription { get; set; }
+
+        public int ExerciseId { get; set; }
 
 
         [Display(Name = "Created")]
