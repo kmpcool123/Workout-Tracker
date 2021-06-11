@@ -3,7 +3,7 @@
 We are looking to create an application that can help you to track your workouts. This application will allow you to track your workouts, routines, exercises, and the equipment you own. This is targeted to anyone that wants to start or improve their workout schedule and structure.
 <br>
 <h3>Database Diagram</h3><br>
-Please feel free to check out our <a href="https://user-images.githubusercontent.com/78277685/121614327-7083f500-ca2c-11eb-8260-3466c5344649.png">DatabaseLayout</a>.
+Please feel free to check out our <a href="https://user-images.githubusercontent.com/78277685/121615721-88a94380-ca2f-11eb-8238-bf2f29b8cd6d.png">DatabaseLayout</a>.
 <br>
 <h3>Trello Board</h3><br>
 Please feel free to check out our <a href="https://trello.com/b/Q6gLIV0X/workout-tracker">Trello Board</a>.
