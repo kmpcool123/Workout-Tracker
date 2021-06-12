@@ -103,7 +103,7 @@ namespace Workout_Tracker.Services
                     .Equipments
                     .Single(e => e.EquipmentID == model.EquipmentId && e.UserID == _userId);
 
-                entity.ExerciseEquipmentName = model.ExerciseEquipmentDescription;
+                entity.ExerciseEquipmentName = model.ExerciseEquipmentName;
                 entity.ExerciseEquipmentDescription = model.ExerciseEquipmentDescription;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
