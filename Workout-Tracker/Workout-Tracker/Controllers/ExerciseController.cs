@@ -42,8 +42,8 @@ namespace Workout_Tracker.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            ExerciseService cardService = CreateExerciseService();
-            var exercise = cardService.GetExerciseById(id);
+            ExerciseService exerciseService = CreateExerciseService();
+            var exercise = exerciseService.GetExerciseById(id);
             return Ok(exercise);
         }
 
