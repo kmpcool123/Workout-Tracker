@@ -84,19 +84,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
-
     <Compile Include="EquipmentService.cs" />
-
     <Compile Include="ExerciseService.cs" />
-
-
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="RoutineService.cs" />
-
     <Compile Include="WorkoutService.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -104,17 +96,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Workout-Tracker.Data\Workout-Tracker.Data.csproj">
-
-
-      <Project>{D1613714-1642-4D39-95C9-1364561DF294}</Project>
+      <Project>{d1613714-1642-4d39-95c9-1364561df294}</Project>
       <Name>Workout-Tracker.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Workout-Tracker.Models\Workout-Tracker.Models.csproj">
-
       <Project>{652cda78-e8f9-463e-a990-a0174df326d8}</Project>
-
-
-
       <Name>Workout-Tracker.Models</Name>
     </ProjectReference>
   </ItemGroup>
