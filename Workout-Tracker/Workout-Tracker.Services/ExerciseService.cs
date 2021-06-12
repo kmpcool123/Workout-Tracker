@@ -27,6 +27,7 @@ namespace Workout_Tracker.Services
                     UserId = _userId,
                     ExerciseName = model.ExerciseName,
                     ExerciseDescription = model.ExerciseDescription,
+                    RoutineId = model.RoutineID,
                     CreatedUtc = DateTimeOffset.UtcNow,
                 };
             using (var ctx = new ApplicationDbContext())
@@ -51,7 +52,7 @@ namespace Workout_Tracker.Services
                                 {
 
                                     ExerciseId = e.ExerciseId,
-                                    ExerciseName = e.ExerciseName, 
+                                    ExerciseName = e.ExerciseName,
                                     RoutineName = e.Routine.RoutineName,
                                     WorkoutName = e.Routine.Workout.WorkoutName,
                                     CreatedUtc = e.CreatedUtc,
@@ -112,7 +113,7 @@ namespace Workout_Tracker.Services
         }
         public bool UpdateExercise(ExerciseEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
@@ -126,7 +127,7 @@ namespace Workout_Tracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        
+
         public bool DeleteExercise(int exerciseId)
         {
             using (var ctx = new ApplicationDbContext())
