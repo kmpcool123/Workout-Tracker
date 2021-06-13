@@ -22,14 +22,14 @@ namespace Workout_Tracker.Controllers
                   return wService;
             }
 
-            public IHttpActionResult Post(WSCreate workout)
+            public IHttpActionResult Post(WSCreate workoutS)
             {
                   if (!ModelState.IsValid)
                         return BadRequest(ModelState);
 
                   var Service = CreateWorkoutS();
 
-                  if (!Service.Create(workout))
+                  if (!Service.Create(workoutS))
                   {
                         return InternalServerError();
                   }

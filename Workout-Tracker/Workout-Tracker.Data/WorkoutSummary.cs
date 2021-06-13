@@ -16,11 +16,9 @@ namespace Workout_Tracker.Data
             [Required]
             public Guid UserID { get; set; }
 
-            [ForeignKey(nameof(Exercise))]
-            public int ExerciseId { get; set; }
-            public virtual Exercise Exercise { get; set; }
-
-
+            [ForeignKey(nameof(Equipment))]
+            public int EquipmentId { get; set; }
+            public virtual ExerciseEquipment Equipment { get; set; }
 
       }
 }

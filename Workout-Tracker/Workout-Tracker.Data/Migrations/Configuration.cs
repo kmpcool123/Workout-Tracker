@@ -10,6 +10,7 @@ namespace Workout_Tracker.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Workout_Tracker.Data.ApplicationDbContext";
         }
 
         protected override void Seed(Workout_Tracker.Data.ApplicationDbContext context)

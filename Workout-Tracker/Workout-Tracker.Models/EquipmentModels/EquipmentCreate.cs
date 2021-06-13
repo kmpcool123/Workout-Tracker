@@ -21,7 +21,7 @@ namespace Workout_Tracker.Models.EquipmentModels
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public string ExerciseEquipmentDescription { get; set; }
 
-        public int ExerciseID { get; set; }
+        public int? ExerciseID { get; set; }
 
 
         [Display(Name = "Created")]

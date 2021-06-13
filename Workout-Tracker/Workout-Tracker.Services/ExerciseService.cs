@@ -27,7 +27,7 @@ namespace Workout_Tracker.Services
                     UserId = _userId,
                     ExerciseName = model.ExerciseName,
                     ExerciseDescription = model.ExerciseDescription,
-                    RoutineID = model.RoutineID,
+                   RoutineID = model.RoutineID,
                     CreatedUtc = DateTimeOffset.UtcNow,
                 };
             using (var ctx = new ApplicationDbContext())

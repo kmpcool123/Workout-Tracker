@@ -32,7 +32,8 @@ namespace Workout_Tracker.Data
         public DateTimeOffset? ModifiedUtc { get; set; }
 
         [ForeignKey(nameof(Exercise))]
-        public int ExerciseId { get; set; }
+        public int? ExerciseId { get; set; }
+
         public virtual Exercise Exercise { get; set; }
 
     }

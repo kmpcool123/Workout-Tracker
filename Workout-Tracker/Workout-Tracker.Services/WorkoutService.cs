@@ -70,8 +70,7 @@ namespace Workout_Tracker.Services
                               {
                                     WorkoutID = entity.WorkoutID,
                                     WorkoutName = entity.WorkoutName,
-                                    Workout_Description = entity.Workout_Description,
-                                  
+                                    Workout_Description = entity.Workout_Description,                                  
                                     CreatedUtc = entity.CreatedUtc,
                                     ModifiedUtc = entity.ModifiedUtc
                               };

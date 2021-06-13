@@ -10,12 +10,12 @@ namespace Workout_Tracker.Models.WSummary
       {
             public int WSID { get; set; }
 
-            public int WorkoutID { get; set; }
+            public string WorkoutName { get; set; }
 
-            public int RoutineID { get; set; }
+            public string RoutineName { get; set; }
 
-            // public int EquipmentID { get; set; }
+             public string EquipmentName { get; set; }
 
-            public int ExerciseID { get; set; }
+            public string ExerciseName { get; set; }
       }
 }

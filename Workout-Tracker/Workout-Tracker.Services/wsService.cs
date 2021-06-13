@@ -13,7 +13,7 @@ namespace Workout_Tracker.Services
             private readonly Guid _userID;
 
             public wsService(Guid userId)
-            {
+            { 
                   _userID = userId;
             }
 
@@ -23,7 +23,8 @@ namespace Workout_Tracker.Services
                         new WorkoutSummary
                         {
                               WorkoutSummaryID = model.WorkoutSummaryID,
-                              ExerciseId = model.ExerciseID,
+                              EquipmentId = model.EquipmentID,
+                             
                         };
 
                   using (var ctx = new ApplicationDbContext())
@@ -46,12 +47,11 @@ namespace Workout_Tracker.Services
                         return
                               new WSDetails
                               {
-                                   WSID = entity.WorkoutSummaryID,
-                                   ExerciseID = entity.ExerciseId,
-                                   RoutineID = entity.Exercise.RoutineID,
-                                   WorkoutID = entity.Exercise.Routine.WorkoutID,  
-         
-                                    
+                                  WSID = entity.WorkoutSummaryID,
+                                   ExerciseName = entity.Equipment.Exercise.ExerciseName,
+                                   RoutineName = entity.Equipment.Exercise.Routine.RoutineName,
+                                   WorkoutName = entity.Equipment.Exercise.Routine.Workout.WorkoutName, 
+                                   EquipmentName = entity.Equipment.ExerciseEquipmentName,                                                                         
                               };
                   }
             }

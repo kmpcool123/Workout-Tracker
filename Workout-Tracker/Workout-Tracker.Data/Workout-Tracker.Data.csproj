@@ -87,9 +87,17 @@
     <Compile Include="Exercise.cs" />
     <Compile Include="ExerciseEquipment.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106111833465_foufthMigration.cs" />
-    <Compile Include="Migrations\202106111833465_foufthMigration.Designer.cs">
-      <DependentUpon>202106111833465_foufthMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202106132300537_InitialCreate.cs" />
+    <Compile Include="Migrations\202106132300537_InitialCreate.Designer.cs">
+      <DependentUpon>202106132300537_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106132319458_UpdateTableInDataLayers.cs" />
+    <Compile Include="Migrations\202106132319458_UpdateTableInDataLayers.Designer.cs">
+      <DependentUpon>202106132319458_UpdateTableInDataLayers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106132342371_UpdateEEquipmentTable.cs" />
+    <Compile Include="Migrations\202106132342371_UpdateEEquipmentTable.Designer.cs">
+      <DependentUpon>202106132342371_UpdateEEquipmentTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,8 +116,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106111833465_foufthMigration.resx">
-      <DependentUpon>202106111833465_foufthMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106132300537_InitialCreate.resx">
+      <DependentUpon>202106132300537_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106132319458_UpdateTableInDataLayers.resx">
+      <DependentUpon>202106132319458_UpdateTableInDataLayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106132342371_UpdateEEquipmentTable.resx">
+      <DependentUpon>202106132342371_UpdateEEquipmentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

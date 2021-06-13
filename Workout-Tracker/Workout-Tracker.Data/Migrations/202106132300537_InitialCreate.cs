@@ -3,7 +3,7 @@ namespace Workout_Tracker.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class foufthMigration : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -17,10 +17,10 @@ namespace Workout_Tracker.Data.Migrations
                         ExerciseEquipmentDescription = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
-                        ExerciseId = c.Int(nullable: false),
+                        ExerciseId = c.Int(),
                     })
                 .PrimaryKey(t => t.EquipmentID)
-                .ForeignKey("dbo.Exercise", t => t.ExerciseId, cascadeDelete: true)
+                .ForeignKey("dbo.Exercise", t => t.ExerciseId)
                 .Index(t => t.ExerciseId);
             
             CreateTable(
@@ -31,13 +31,13 @@ namespace Workout_Tracker.Data.Migrations
                         UserId = c.Guid(nullable: false),
                         ExerciseName = c.String(nullable: false),
                         ExerciseDescription = c.String(nullable: false),
-                        RoutineID = c.Int(nullable: false),
+                        RoutineID = c.Int(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                         Workout_WorkoutID = c.Int(),
                     })
                 .PrimaryKey(t => t.ExerciseId)
-                .ForeignKey("dbo.Routine", t => t.RoutineID, cascadeDelete: true)
+                .ForeignKey("dbo.Routine", t => t.RoutineID)
                 .ForeignKey("dbo.Workout", t => t.Workout_WorkoutID)
                 .Index(t => t.RoutineID)
                 .Index(t => t.Workout_WorkoutID);
@@ -50,12 +50,12 @@ namespace Workout_Tracker.Data.Migrations
                         UserId = c.Guid(nullable: false),
                         RoutineName = c.String(nullable: false),
                         RoutineDescription = c.String(),
-                        WorkoutID = c.Int(nullable: false),
+                        WorkoutID = c.Int(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.RoutineId)
-                .ForeignKey("dbo.Workout", t => t.WorkoutID, cascadeDelete: true)
+                .ForeignKey("dbo.Workout", t => t.WorkoutID)
                 .Index(t => t.WorkoutID);
             
             CreateTable(
@@ -147,17 +147,17 @@ namespace Workout_Tracker.Data.Migrations
                     {
                         WorkoutSummaryID = c.Int(nullable: false, identity: true),
                         UserID = c.Guid(nullable: false),
-                        ExerciseId = c.Int(nullable: false),
+                        EquipmentId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.WorkoutSummaryID)
-                .ForeignKey("dbo.Exercise", t => t.ExerciseId, cascadeDelete: true)
-                .Index(t => t.ExerciseId);
+                .ForeignKey("dbo.ExerciseEquipment", t => t.EquipmentId, cascadeDelete: true)
+                .Index(t => t.EquipmentId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.WorkoutSummary", "ExerciseId", "dbo.Exercise");
+            DropForeignKey("dbo.WorkoutSummary", "EquipmentId", "dbo.ExerciseEquipment");
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
@@ -166,7 +166,7 @@ namespace Workout_Tracker.Data.Migrations
             DropForeignKey("dbo.Exercise", "Workout_WorkoutID", "dbo.Workout");
             DropForeignKey("dbo.Exercise", "RoutineID", "dbo.Routine");
             DropForeignKey("dbo.Routine", "WorkoutID", "dbo.Workout");
-            DropIndex("dbo.WorkoutSummary", new[] { "ExerciseId" });
+            DropIndex("dbo.WorkoutSummary", new[] { "EquipmentId" });
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });

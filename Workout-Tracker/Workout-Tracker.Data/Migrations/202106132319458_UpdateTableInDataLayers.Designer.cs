@@ -7,13 +7,13 @@ namespace Workout_Tracker.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class foufthMigration : IMigrationMetadata
+    public sealed partial class UpdateTableInDataLayers : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(foufthMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateTableInDataLayers));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106111833465_foufthMigration"; }
+            get { return "202106132319458_UpdateTableInDataLayers"; }
         }
         
         string IMigrationMetadata.Source
